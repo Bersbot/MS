@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://mlgxa32nu8io"]
+
+[ext_resource type="ArrayMesh" uid="uid://b5bpxe5q8xhkh" path="res://MATVIY.obj" id="1_a202f"]
+[ext_resource type="Script" uid="uid://v6hvt6mavmk7" path="res://matviy_2.gd" id="2_noarx"]
+[ext_resource type="AudioStream" uid="uid://1pcabibm8o2p" path="res://Two-dogs-groaning-moaning-at-the-kitchen.mp3" id="3_a0tk4"]
+[ext_resource type="Script" uid="uid://cowcm7x3bal4" path="res://audio_stream_player_2d.gd" id="4_r3fl7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_noarx"]
+size = Vector3(100, 1, 100)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.20758, -12.910336, -0.049129486)
+visible = false
+mesh = SubResource("BoxMesh_noarx")
+
+[node name="Matviy" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8732, 0.7969644, 9.7659645)
+mesh = ExtResource("1_a202f")
+script = ExtResource("2_noarx")
+
+[node name="Matviy2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.585869, 0.5359192, 9.628276)
+mesh = ExtResource("1_a202f")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9571731, 0.28951624, 0, -0.28951624, 0.9571731, -13.932876, 5.6718545, 16.11655)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.188305, 44.271805, 0)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_a0tk4")
+script = ExtResource("4_r3fl7")
